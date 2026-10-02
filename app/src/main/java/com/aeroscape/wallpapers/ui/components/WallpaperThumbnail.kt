@@ -3,6 +3,7 @@ package com.aeroscape.wallpapers.ui.components
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
@@ -53,7 +54,7 @@ fun WallpaperThumbnail(
             drawIntoCanvas { canvas ->
                 drawIntoCanvas { canvas ->
     WallpaperRenderer.draw(
-        canvas.asAndroidCanvas(),
+        canvas.nativeCanvas,
         size.width.toInt(),
         size.height.toInt(),
         spec
