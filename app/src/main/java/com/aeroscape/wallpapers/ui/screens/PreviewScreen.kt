@@ -81,13 +81,14 @@ fun PreviewScreen(
         // Full-bleed live preview of the wallpaper recipe
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawIntoCanvas { canvas ->
-                WallpaperRenderer.draw(
-                    canvas.nativeCanvas,
-                    size.width.toInt(),
-                    size.height.toInt(),
-                    spec
-                )
-            }
+    WallpaperRenderer.draw(
+        canvas.asAndroidCanvas(),
+        size.width.toInt(),
+        size.height.toInt(),
+        spec
+    )
+}
+
         }
 
         // Top row: back + favorite, floating glass circles
