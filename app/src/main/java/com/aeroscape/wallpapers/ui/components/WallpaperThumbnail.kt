@@ -54,11 +54,12 @@ fun WallpaperThumbnail(
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawIntoCanvas { canvas ->
                 WallpaperRenderer.draw(
-                    canvas.nativeCanvas,
-                    size.width.toInt(),
-                    size.height.toInt(),
-                    spec
-                )
+    canvas.asAndroidCanvas(),
+    size.width.toInt(),
+    size.height.toInt(),
+    spec
+)
+
             }
         }
 
